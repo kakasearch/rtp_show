@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>既有线拨距计算</title>
+    <script src=""></script>
+    <noscript><p>对不起，您的浏览器版本不支持本工具，请升级浏览器或者使用Chrome等主流浏览器，谢谢合作</p></noscript>
+   <style type="text/css">
+      .content{
+         text-align:center;
+      }
+      #result{
+         width: max-content;
+      }
+      table {
+         border-collapse: collapse;
+      }
+      th, td {
+         border: solid 1px #6D6D6D;
+         padding: 5px 10px;
+         text-align: center;
+      }
+      .mt-sm {margin-top: 8px;}
+      body {
+
+         background: #f4f4f4;
+         padding: 30px;
+         margin: 0;
+      }
+      .container {
+         width: 1024px;
+         margin: 0 auto;
+         background: #fff;
+         padding: 20px;
+         min-height: 100vh;
+      }
+   </style>
+</head>
+<body >
+   <div class="content">
+    <h1>欢迎使用本工具</h1>
+    <h6>请下载表格模板，填写数据后上传，先上传表格再提交数据，后台将为您输出计算结果</h6>
+    <form name="既有线拨距计算">
+     <!-- 输出设计曲线半径 -->
+     <div><label for="R_sj" >设计曲线半径：</label>
+        <input type="text" oninput="value=value.replace(/[^\d.]/g,'')" name="R_sj"  placeholder="单位为m" id="R_sj">
+     </div>
+     <!-- 输入缓和曲线长度 -->
+     <div><label for="l_0">缓和曲线长度：</label>
+        <input type="text" oninput="value=value.replace(/[^\d.]/g,'')" name="l_0"  placeholder="单位为m" id="l_0">
+     </div>
+    <input type="file" id="file" style="display:none;"  accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+     <input type="button" value="加载本地excel文件" onclick="javascript:sel()"> 
+     <a href="数据输入模板.xlsx" target="_blank" >(点击下载表格模板)</a>
+     <input type="button" disabled value="重新计算" id="re_cal" onclick="javascript:start_cal()">
+    </form>
+ </div>
+    <br/>
+   <input type="button"  id="export_excel" style="display:none;" value="导出计算结果excel" >
+      <!-- 显示单元格 -->
+   <div id="result"></div>
+
+   <script src="https://cdn.jsdelivr.net/npm/xlsx-style@0.8.13/dist/jszip.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx-style@0.8.13/dist/cpexcel.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx-style@0.8.13/dist/ods.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.js"></script>
+<script src="./xlsx_style.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.16.6/dist/xlsx.js"></script>
+  <script src="./handle_EXCEL.js"></script>
+  <script type="text/javascript">
+     function sel(){
+      document.getElementById('file').click()
+      document.querySelector("#re_cal").removeAttribute("disabled")
+     }
+  </script>
+</body>
+</html>
