@@ -273,7 +273,7 @@ function check_G(){
     }
 //启动验算 例2-4 p84
 let i_q = parseFloat(document.querySelector("#i_q").value)                                  //input
-if (i_q) {
+if (i_q>=0) {
     if (check_qi_dong(qyxn_parms_object, P , i_q , G)) {
         results.push("<p style='color: green;' >启动检算通过！</p>")
     } else {
@@ -283,7 +283,7 @@ if (i_q) {
 
 //例2-5 p85
 let L_yx  = parseFloat(document.querySelector("#L_yx").value)                                        //input
-if (L_yx>=0) {
+if (L_yx) {
     if (check_dfxyxc(qyxn_parms_object,L_yx)) {
         results.push("<p  style='color: green;' >到发线有效长检算通过！</p>")
     } else {
@@ -295,7 +295,7 @@ if (L_yx>=0) {
 // var F_c  = 562500    //需要由车钩型号转化得到                   //input
 // var i_JL = 18.4                                             //input
 // check_cgqd(F_c,i_JL,w_0_pp)
-    if((!L_yx) && (!i_q)){
+    if((!L_yx)){
         alert("未输入检算条件！")
         return
     }else{
