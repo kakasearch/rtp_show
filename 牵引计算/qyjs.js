@@ -283,7 +283,7 @@ if (i_q) {
 
 //例2-5 p85
 let L_yx  = parseFloat(document.querySelector("#L_yx").value)                                        //input
-if (L_yx) {
+if (L_yx>=0) {
     if (check_dfxyxc(qyxn_parms_object,L_yx)) {
         results.push("<p  style='color: green;' >到发线有效长检算通过！</p>")
     } else {
