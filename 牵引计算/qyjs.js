@@ -296,7 +296,7 @@ if (L_yx) {
 // var i_JL = 18.4                                             //input
 // check_cgqd(F_c,i_JL,w_0_pp)
     if((!L_yx)){
-        alert("未输入检算条件！")
+        alert("未输入到发线有效长！")
         return
     }else{
         results.push("<p>计算结果仅供参考</p>")
