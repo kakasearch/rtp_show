@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>既有线拨距计算</title>
+    <title>土石方量计算</title>
     <script src=""></script>
     <noscript><p>对不起，您的浏览器版本不支持本工具，请升级浏览器或者使用Chrome等主流浏览器，谢谢合作</p></noscript>
    <style type="text/css">
@@ -44,14 +44,7 @@
     <h1>欢迎使用本工具</h1>
     <h6>请下载表格模板，填写数据后上传，先上传表格再提交数据，后台将为您输出计算结果</h6>
     <form name="既有线拨距计算">
-     <!-- 输出设计曲线半径 -->
-     <div><label for="R_sj" >设计曲线半径：</label>
-        <input type="text" oninput="value=value.replace(/[^\d.]/g,'')" name="R_sj"  placeholder="单位为m" id="R_sj">
-     </div>
-     <!-- 输入缓和曲线长度 -->
-     <div><label for="l_0">缓和曲线长度：</label>
-        <input type="text" oninput="value=value.replace(/[^\d.]/g,'')" name="l_0"  placeholder="单位为m" id="l_0">
-     </div>
+   
     <input type="file" id="file" style="display:none;"  accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
      <input type="button" value="加载本地excel文件" onclick="javascript:sel()"> 
      <a href="数据输入模板.xlsx" target="_blank" >(点击下载表格模板)</a>
