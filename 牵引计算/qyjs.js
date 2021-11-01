@@ -266,10 +266,21 @@ function get_G(){
 
 
 function check_G(){
-    results = []
+    results = ["<p>所有数据向下取整到10t</p>","<p>g= 9.81</p>"]
     if(!G){
-        alert("请先计算最大牵引质量")
-        return
+        if(document.querySelector("#G").value){
+            jiche_type = document.querySelector("#jiche_type").value                                //input
+            cheliang_type = document.querySelector(".cheliang_type:checked").value                 //input
+            i_xORi_JL = parseFloat(document.querySelector("#i_x").value)  
+            G = parseFloat(document.querySelector("#G").value)
+
+            qyxn_parms_object = qyxn_parms[jiche_type]
+            P = qyxn_parms_object.P
+        }else{
+            alert("请先计算最大牵引质量")
+            return
+        }
+        
     }
 //启动验算 例2-4 p84
 let i_q = parseFloat(document.querySelector("#i_q").value)                                  //input
