@@ -159,7 +159,7 @@ function cal_ssnl(){
     let N_PT = (N/1.2)-(N_K*+1.3+2*N_L+N_Z*1.5+N_KH*1.2)
     let N_H = N_PT + N_L*0.5+0.75*N_Z+0.75*N_KH
     let C = 365*N_H*G_j/1000000/1.15
-    show_ssnl.innerHTML = `当前区间输送能力：${G_j.toFixed(2)}Mt/a`
+    show_ssnl.innerHTML = `当前区间输送能力：${C.toFixed(2)}Mt/a`
 }
 
 
