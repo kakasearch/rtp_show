@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>区间通过能力计算</title>
-    <script src=""></script>
+    <script src="./qjtgnl.js"></script>
     <noscript><p>对不起，您的浏览器版本不支持本工具，请升级浏览器或者使用Chrome等主流浏览器，谢谢合作</p></noscript>
 </head>
 <body>
@@ -28,6 +28,19 @@
                <option value="DF_8">东风8型</option>
            </select> 
         </div><br>
+        <div>
+            <table  id="show_data" style="display: none;" >
+                <tr>
+                    <td>坡段长度</td>
+                    <td>计算坡度</td>
+                    <td>均衡速度</td>
+                    <td>每公里走行速度</td>
+                    <td>该坡道走行时分</td>
+                </tr>
+
+            </table>
+        <p id="show_data_sum"  style="color: green;"></p>
+        </div>
         <!-- 加算坡度输入 -->
         <div><label for="l">坡段长度：</label>
             <input type="text" oninput="value=value.replace(/[^\d\.]/g,'')" name="l" placeholder="单位为Km" id="l">
@@ -35,40 +48,43 @@
         </div>
         <!-- 加算坡度输入 -->
         <div><label for="i_j">加算坡度坡度：</label>
-            <input type="text" oninput="value=value.replace(/[^\d\.]/g,'')" name="i_j" placeholder="单位为‰" id="i_j">
+            <input type="text" oninput="value=value.replace(/[^-\d\.]/g,'')" name="i_j" placeholder="单位为‰" id="i_j">
         </div>
-        <div><input type="button" value="计算">
+        <div><input type="button" id="CalAlone" onclick="cal_alone()" value="计算">
         </div><br>
         </div>
-         <!-- 走行时分输出 -->
-        <div>
-        <label for="">单独坡段走行时分（单位为min）：</label><br>
-        <a id=""></a>
-        <br>
-        <div>
-         <!-- 求和 -->
-        <div><input type="button" value="求和"></div>
-        <h5>2、区间行车时分计算：</h5>
-        <div><label for="zxsf">区间走行时分：</label>
-            <input type="text"oninput="value=value.replace(/[^\d\.]/g,'')" name="" placeholder="单位为min" id=""><a>（单位为min）</a>
-        </div></div><br>
          <!-- 通过能力输出 -->
          <div>
-            <div><input type="button" value="计算区间通过能力"><br>
+            <div><label for="T_t">天窗时间：</label>
+                <input type="text" oninput="value=value.replace(/[^\d\.]/g,'')" placeholder="单位为min" id="T_t">
+            </div>
+            <div><label for="T_z">Tz：</label>
+                <input type="text" oninput="value=value.replace(/[^\d\.]/g,'')" placeholder="单位为min" id="T_z">
+            </div>
+            <p id="show_tgnl">
+            <div><input type="button" onclick="cal_tgnl()" value="计算区间通过能力"><br>
             <label for=""> <!--区间通过能力（对/d）：--></label><br>
             <a id=""></a>
          <!-- 输入其它货物列车-->
-         <div><label for="N_KH">快运货物列车对数：</label>
-            <input type="text" oninput="value=value.replace(/[^\d\.]/g,'')" name="N_KH" placeholder="单位为对/d" id="N_KH">
+         <div><label for="N">通过能力：</label>
+            <input type="text" oninput="value=value.replace(/[^\d\.]/g,'')"  placeholder="单位为对/d" id="N">
         </div><br>
-        <div><label for="N_L">零担货物列车对数：</label>
-            <input type="text" oninput="value=value.replace(/[^\d\.]/g,'')" name="N_L" placeholder="单位为对/d" id="N_L">
+         <div><label for="N_K">客车列车对数：</label>
+            <input type="text" oninput="value=value.replace(/[^\d\.]/g,'')"placeholder="单位为对/d" id="N_K">
         </div><br>
         <div><label for="N_Z">摘挂货物列车对数：</label>
             <input type="text" oninput="value=value.replace(/[^\d\.]/g,'')" name="N_Z" placeholder="单位为对/d" id="N_Z">
         </div><br>
+        <div><label for="N_L">零担货物列车对数：</label>
+            <input type="text" oninput="value=value.replace(/[^\d\.]/g,'')" name="N_L" placeholder="单位为对/d" id="N_L">
+        </div><br>
+         <div><label for="N_KH">快运货物列车对数：</label>
+            <input type="text" oninput="value=value.replace(/[^\d\.]/g,'')" name="N_KH" placeholder="单位为对/d" id="N_KH">
+        </div><br>
+        <p>输送能力计算仅适用于本课程设计</p>
+        <p style="color: green;" id="show_ssnl"></p> 
         <!-- 输输出输送能力-->
-        <div><input type="button" value="计算运输能力"></div><br>
+        <div><input type="button" onclick="cal_ssnl()" value="计算输送能力"></div><br>
         <div><a id="c"></a></div>
             
     </form>
