@@ -348,12 +348,12 @@ function handle_excel(R_S,l_0){
         let juli = result[i/2+1]["licheng"]["num"]-result[i/2]["licheng"]["num"]
         let result_tian = juli*avg_area_tian
         let result_wa = juli*avg_area_tian
-        total_wa.push(result_wa)
-         total_tian.push(result_tian)
         i = i+2
         if (/桥|隧道/.test(beizhu)){
             cal_result.push(['','',juli,'',''])
         }else{
+            total_wa.push(result_wa)
+            total_tian.push(result_tian)
             cal_result.push([avg_area_tian,avg_area_wa,juli,result_tian,result_wa])
         }
         if(/\d/.test(beizhu)){
