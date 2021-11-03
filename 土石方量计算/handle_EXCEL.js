@@ -343,11 +343,11 @@ function handle_excel(R_S,l_0){
     for(var i = 0; i < 2*result.length-2;){
 
         let beizhu = worksheet['N'+(i+6)].v
-        let avg_area_tian = result[i/2]["tian"]+result[i/2+1]["tian"]
-        let avg_area_wa = result[i/2]["wa"]+result[i/2+1]["wa"]
+        let avg_area_tian =( result[i/2]["tian"]+result[i/2+1]["tian"])/2
+        let avg_area_wa =( result[i/2]["wa"]+result[i/2+1]["wa"])/2
         let juli = result[i/2+1]["licheng"]["num"]-result[i/2]["licheng"]["num"]
         let result_tian = juli*avg_area_tian
-        let result_wa = juli*avg_area_tian
+        let result_wa = juli*avg_area_wa
         i = i+2
         if (/桥|隧道/.test(beizhu)){
             cal_result.push(['','',juli,'',''])
