@@ -108,6 +108,7 @@ function cal_alone(){
     let i_j = parseFloat(document.querySelector("#i_j").value)
     let jiche_type = document.querySelector("#jiche_type").value
     if(i_j >2){
+        let qy = params_qjtgnl[jiche_type].qy
         result = xxnc(qy[1],qy[0],i_j)
     }
     else if(i_j>0){
