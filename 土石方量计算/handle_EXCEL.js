@@ -137,9 +137,10 @@ function sum(arr){
     return sum1
 }
 function xxnc2d(x1,x2,x3,x4,d1,d2,y1,y2,w1,w2){
-    //     y1 y2
-    // d1  x1 x2
-    // d2  x3 x4
+    //     y1 w2 y2
+    // d1  x1    x2
+    // w1
+    // d2  x3    x4
     // xxnc w1,w2
     // console.log(x1,x2,x3,x4,d1,d2,y1,y2,w1,w2)
     
