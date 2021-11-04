@@ -225,6 +225,7 @@ function handle_excel(R_S,l_0){
         tian = []
         wa = []
         if(item["gao_t"]!== ''){
+            item["gao_t"]= Math.abs(item["gao_t"])
             //范围 23.3 =》 23-23.5
             zhengshu = parseInt(item["gao_t"])
             range = []
@@ -276,7 +277,7 @@ function handle_excel(R_S,l_0){
 
 
         if(item["gao_w"]!== ''){
-            //范围 23.3 =》 23-23.5
+            item["gao_w"]= Math.abs(item["gao_w"])
             zhengshu = parseInt(item["gao_w"])
             range = []
             if(item["gao_w"]-zhengshu>0.5){
@@ -334,7 +335,7 @@ function handle_excel(R_S,l_0){
     }
     let mdata= []
     for(item of result){
-        mdata.push([item["tian"],item["wa"]])
+        mdata.push([parseFloat(item["tian"].toFixed(5)),parseFloat(item["wa"].toFixed(5))])
         mdata.push(['',''])
     }
     xlsx.utils.sheet_add_aoa(worksheet,mdata , {origin: "F5"});
