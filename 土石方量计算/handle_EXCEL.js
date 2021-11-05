@@ -224,7 +224,14 @@ function handle_excel(R_S,l_0){
     for(item of result){
         tian = []
         wa = []
-        
+        // 填挖都0 或者一个为空，不能一个有值拎一个为0
+        if(item["gao_t"]!== '' && item["gao_w"] == 0){
+            item["gao_w"] == ''
+        }
+        if(item["gao_w"]!== '' && item["gao_t"] == 0){
+            item["gao_t"] == ''
+        }
+
         if(item["gao_t"]!== ''){
             item["gao_t"]= Math.abs(item["gao_t"])
             //范围 23.3 =》 23-23.5
