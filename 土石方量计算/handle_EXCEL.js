@@ -224,7 +224,7 @@ function handle_excel(R_S,l_0){
     for(item of result){
         tian = []
         wa = []
-        if((item["gao_t"]!== '' && item["gao_w"]=== '' )||(item['gao_w']==0 && item["gao_t"]== 0)){
+        if(item["gao_t"]!== ''){
             item["gao_t"]= Math.abs(item["gao_t"])
             //范围 23.3 =》 23-23.5
             zhengshu = parseInt(item["gao_t"])
@@ -276,7 +276,7 @@ function handle_excel(R_S,l_0){
            }
 
 
-        if((item["gao_w"]!== '' && item["gao_t"]=== '' )||(item['gao_w']==0 && item["gao_t"]== 0)){
+        if(item["gao_w"]!== ''){
             item["gao_w"]= Math.abs(item["gao_w"])
             zhengshu = parseInt(item["gao_w"])
             range = []
