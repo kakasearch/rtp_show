@@ -204,7 +204,7 @@ function handle_excel(R_S,l_0){
 
     }]
     for (var i = 4; i < maxrow-1; i++) {
-        if((!data[i])||(!data[i]['1'])) continue
+        if((!data[i])||(!data[i]['1'])||(data[i]['1']=='')) continue
         let item = {
             "licheng":{
                 "str":data[i]['1'],
@@ -225,13 +225,14 @@ function handle_excel(R_S,l_0){
         tian = []
         wa = []
         // 填挖都0 或者一个为空，不能一个有值拎一个为0
-        if(item["gao_t"]!== '' && item["gao_w"] == 0){
-            item["gao_w"] == ''
-        }
-        if(item["gao_w"]!== '' && item["gao_t"] == 0){
-            item["gao_t"] == ''
-        }
-
+       // if(item["gao_t"]!== '' && item["gao_t"]!== 0 && item["gao_w"] == 0){
+       //      item["gao_w"] == ''
+       //  }else if(item["gao_w"]!== '' && item["gao_w"]!== 0 && item["gao_t"] == 0){
+       //      item["gao_t"] == ''
+       //  }
+       // if(item["licheng"]["num"]==85000){
+       //  console.log(item)
+       // }
         if(item["gao_t"]!== ''){
             item["gao_t"]= Math.abs(item["gao_t"])
             //范围 23.3 =》 23-23.5
@@ -252,10 +253,13 @@ function handle_excel(R_S,l_0){
             if(po_range.length==0){
                 log("error:左坡超限")
             }
-            let x1 = half_area["路堤"][range[0]][po_range[0]]
-            let x2 = half_area["路堤"][range[0]][po_range[1]]
-            let x3 = half_area["路堤"][range[1]][po_range[0]]
-            let x4 = half_area["路堤"][range[1]][po_range[1]]
+            console.log(item,range,po_range)
+            let  x1 = half_area["路堤"][range[0]][po_range[0]]
+            let  x2 = half_area["路堤"][range[0]][po_range[1]]
+            let  x3 = half_area["路堤"][range[1]][po_range[0]]
+            let  x4 = half_area["路堤"][range[1]][po_range[1]]
+
+
             let zuo_tian = xxnc2d(x1[0],x2[0],x3[0],x4[0],range[2],range[3],po_range[2],po_range[3],item["gao_t"],item["po_zuo"])
             //log(zuo_tian)
            // exit()
