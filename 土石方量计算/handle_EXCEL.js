@@ -392,7 +392,7 @@ function handle_excel(R_S,l_0){
     total_wa = sum(total_wa)
 
     xlsx.utils.sheet_add_aoa(worksheet,cal_result , {origin: "H6"});
-    xlsx.utils.sheet_add_aoa(worksheet,[["总填方",total_tian],["总挖方",total_wa]] , {origin: "O12"});
+    xlsx.utils.sheet_add_aoa(worksheet,[["总填方",total_tian],["总挖方",total_wa]] , {origin: "O14"});
     for (var i = 5; i < maxrow; i++) {
         for(j of 'FGHIJKL'){
             if( worksheet[j+i]){
