@@ -224,6 +224,7 @@ function handle_excel(R_S,l_0){
     for(item of result){
         tian = []
         wa = []
+        
         if(item["gao_t"]!== ''){
             item["gao_t"]= Math.abs(item["gao_t"])
             //范围 23.3 =》 23-23.5
@@ -344,7 +345,7 @@ function handle_excel(R_S,l_0){
     total_wa = []
     for(var i = 0; i < 2*result.length-2;){
 
-        let beizhu =worksheet['N'+(i+6)].v
+        let beizhu = worksheet['N'+(i+6)]?worksheet['N'+(i+6)].v:''
         let avg_area_tian =( result[i/2]["tian"]+result[i/2+1]["tian"])/2
         let avg_area_wa =( result[i/2]["wa"]+result[i/2+1]["wa"])/2
         let juli = result[i/2+1]["licheng"]["num"]-result[i/2]["licheng"]["num"]
