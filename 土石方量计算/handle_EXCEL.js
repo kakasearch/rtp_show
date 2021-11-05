@@ -373,7 +373,7 @@ function handle_excel(R_S,l_0){
         if(/\d/.test(beizhu)){
             try{
                 tmp = parseFloat(beizhu)
-                if (tmp<0) {
+                if (-tmp<0) {
                     total_wa.push(tmp)
                 }else{
                     total_tian.push(tmp)
