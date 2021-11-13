@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>土石方量计算</title>
+    <script src=""></script>
+    <noscript><p>对不起，您的浏览器版本不支持本工具，请升级浏览器或者使用Chrome等主流浏览器，谢谢合作</p></noscript>
+   <style type="text/css">
+      .content{
+         text-align:center;
+      }
+      #result{
+         width: max-content;
+      }
+      table {
+         border-collapse: collapse;
+      }
+      th, td {
+         border: solid 1px #6D6D6D;
+         padding: 5px 10px;
+         text-align: center;
+      }
+      .mt-sm {margin-top: 8px;}
+      body {
+
+         background: #f4f4f4;
+         padding: 30px;
+         margin: 0;
+      }
+      .container {
+         width: 1024px;
+         margin: 0 auto;
+         background: #fff;
+         padding: 20px;
+         min-height: 100vh;
+      }
+   </style>
+</head>
+<body >
+   <div class="content">
+    <h1>欢迎使用本工具</h1>
+    <h6>请下载表格模板，填写数据后上传，后台将为您输出计算结果</h6>
+    <input type="file" id="file" style="display:none;"  accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+     <input type="button" value="加载本地excel文件" onclick="javascript:sel()"> 
+     <a href="数据输入模板.xlsx" target="_blank" >(点击下载表格模板)</a>
+    </form>
+ </div>
+    <br/>
+      <!-- 显示单元格 -->
+   <div id="result"></div>
+
+   <script src="https://cdn.jsdelivr.net/npm/xlsx-style@0.8.13/dist/jszip.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx-style@0.8.13/dist/cpexcel.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx-style@0.8.13/dist/ods.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.js"></script>
+<script src="xlsx_style.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.16.6/dist/xlsx.js"></script>
+  <script src="handle_EXCEL.js"></script>
+  <script type="text/javascript">
+     function sel(){
+      document.getElementById('file').click()
+      
+     }
+  </script>
+</body>
+</html>
