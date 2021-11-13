@@ -174,7 +174,7 @@ document.getElementById('file').addEventListener('change', function(e) {
 function start_cal(){
                 //上传完就开是计算
         let result = handle_excel()
-        alert(`计算结果仅供参考\n总填方：${total_tian}\n总挖方:${total_wa}`)
+        document.querySelector("#result").innerHTML = `<h4>计算结果仅供参考</h4><p  style="color:green">总填方：${total_tian}</p><p  style="color:green">总挖方:${total_wa}</p>`
         //下载过程文件
         //var wbout = xlsx_style.write(workbook, { bookType: 'xlsx', bookSST: false, type: 'binary' })
         //saveAs(new Blob([s2ab(wbout)], { type: "" }), "处理结果.xlsx")
