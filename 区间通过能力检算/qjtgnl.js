@@ -134,6 +134,7 @@ function cal_alone(){
                             <td  style="color: green;">${result.toFixed(2)}</td>
                             <td  style="color: green;">${(60/result).toFixed(2)}</td>
                             <td  style="color: green;">${(60/result*l).toFixed(2)}</td>
+                            <td  ><input type="button" value="删除此行" onclick="delate(this,${60/result*l})">  </td>
                             </tr>`
     sum_ += 60/result*l
     document.querySelector("#show_data_sum").innerHTML = "区间走行时分(min):"+sum_.toFixed(2)
@@ -141,7 +142,11 @@ function cal_alone(){
     document.querySelector("#l").value = ""
     document.querySelector("#i_j").value = ""
 }
-0
+function delate(e,d){
+	sum_ -= d
+	document.querySelector("#show_data_sum").innerHTML = "区间走行时分(min):"+sum_.toFixed(2)
+	e.parentElement.parentElement.innerHTML=""
+}
 function cal_tgnl(){
     let T_t = parseFloat(document.querySelector("#T_t").value)
     let T_z = parseFloat(document.querySelector("#T_z").value)
